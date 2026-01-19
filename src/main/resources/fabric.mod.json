@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "paragliders",
+  "version": "${version}",
+  "name": "ParagliderPlus",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.eatbun.paragliders.client.ParaglidersDataGenerator"
+    ],
+    "client": [
+      "org.eatbun.paragliders.client.ParaglidersClient"
+    ],
+    "main": [
+      "org.eatbun.paragliders.Paragliders"
+    ]
+  },
+  "mixins": [
+    "paragliders.mixins.json",
+    {
+      "config": "paragliders.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

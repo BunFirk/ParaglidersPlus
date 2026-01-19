@@ -1,0 +1,5 @@
+{
+  "required": true,
+  "package": "org.eatbun.paragliders.mixin",
+  "mixins": []
+}

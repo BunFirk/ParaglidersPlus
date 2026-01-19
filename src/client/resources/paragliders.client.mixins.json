@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.eatbun.paragliders.mixin.client",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "BipedEntityModelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
