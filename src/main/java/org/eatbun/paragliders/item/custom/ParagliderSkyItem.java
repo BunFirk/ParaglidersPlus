@@ -5,8 +5,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.UseAction;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ParagliderSkyItem extends Item {
@@ -75,11 +78,38 @@ public class ParagliderSkyItem extends Item {
         }
 
         if (overLava) {
-            player.setVelocity(vx, 0.15, vz);
+            player.setVelocity(vx, 0.15, vz); // скорость
+
+            world.playSound( // звук
+                    null,
+                    BlockPos.ofFloored(player.getPos()),
+                    SoundEvents.ENTITY_PHANTOM_FLAP,
+                    SoundCategory.NEUTRAL,
+                    0.4f,
+                    1f
+            );
         } else if (nearLava) {
-            player.setVelocity(vx, 0, vz);
+            player.setVelocity(vx, 0, vz); // скорость
+
+            world.playSound( // звук
+                    null,
+                    BlockPos.ofFloored(player.getPos()),
+                    SoundEvents.ENTITY_PHANTOM_FLAP,
+                    SoundCategory.NEUTRAL,
+                    0.4f,
+                    1f
+            );
         } else if (vy < 0) {
-            player.setVelocity(vx * 1.05, -0.15, vz * 1.05);
+            player.setVelocity(vx * 1.05, -0.15, vz * 1.05); //  скорость
+
+            world.playSound( // звук
+                    null,
+                    BlockPos.ofFloored(player.getPos()),
+                    SoundEvents.ENTITY_PHANTOM_FLAP,
+                    SoundCategory.NEUTRAL,
+                    0.4f,
+                    1f
+            );
 
             /*
             if (world.isClient && player.age % 4 == 0) { // раз в 4 тика
